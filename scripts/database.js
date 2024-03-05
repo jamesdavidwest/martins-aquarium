@@ -1399,46 +1399,79 @@ const quoteList = {
 };
 
 const scubaDivingTips = [
-	"Stay calm and conserve your air. Control your breathing and move slowly to maximize your dive time and enjoy the underwater scenery.",
-	"Maintain proper buoyancy to protect delicate marine life and avoid damaging coral reefs. Practice good buoyancy control to minimize your impact on the environment.",
-	"Always plan your dive and dive your plan. Make sure you're familiar with the dive site, check the weather and currents, and communicate with your dive buddy to ensure a safe and enjoyable experience.",
+	{
+		title: "Stay Calm and Conserve Air",
+		description: "Control your breathing and move slowly to maximize your dive time and enjoy the underwater scenery.",
+	},
+	{
+		title: "Maintain Proper Buoyancy",
+		description:
+			"Protect delicate marine life and avoid damaging coral reefs. Practice good buoyancy control to minimize your impact on the environment.",
+	},
+	{
+		title: "Plan Your Dive | Dive Your Plan",
+		description:
+			"Make sure you're familiar with the dive site, check the weather and currents, and communicate with your dive buddy to ensure a safe and enjoyable experience.",
+	},
 ];
 
 const fishHarvestingTips = [
-	"Handle fish with care to ensure their freshness and quality. Use a soft landing net or wet hands to avoid damaging their delicate scales and flesh.",
-	"Know your local regulations and practice responsible fishing. Respect catch limits, release undersized or protected species, and use sustainable fishing methods to preserve marine ecosystems.",
-	"Keep your fishing gear clean and well-maintained for optimal performance. Regularly check your hooks, lines, and reels to prevent equipment failure and ensure successful catches.",
+	{
+		title: "Handle Fish with Care",
+		description: "Ensure their freshness and quality. Use a soft landing net or wet hands to avoid damaging their delicate scales and flesh.",
+	},
+	{
+		title: "Know Your Local Regulations",
+		description:
+			"Practice responsible fishing. Respect catch limits, release undersized or protected species, and use sustainable fishing methods to preserve marine ecosystems.",
+	},
+	{
+		title: "Maintain Fish Gear",
+		description:
+			"Keep your fishing gear clean and well-maintained for optimal performance. Regularly check your hooks, lines, and reels to prevent equipment failure and ensure successful catches.",
+	},
 ];
 
 const tankCleaningTips = [
 	{
-		"Regular Water Changes":
+		title: "Regular Water Changes",
+		description:
 			"Perform regular water changes to remove waste and maintain water quality. Aim to replace about 10-20% of the tank's water every 1-2 weeks, depending on the size of the tank and the number of fish.",
-		"Vacuum Gravel":
+	},
+	{
+		title: "Vacuum Gravel",
+		description:
 			"Use a gravel vacuum to clean the substrate in the tank. This will remove debris and waste that has settled on the bottom of the tank, helping to prevent the buildup of harmful substances and maintain a clean environment for your fish.",
-		"Clean Decorations and Equipment":
+	},
+	{
+		title: "Clean Decorations and Equipment",
+		description:
 			"Regularly clean decorations, filters, and other equipment in the tank to prevent the accumulation of algae and debris. Use a soft brush or sponge to gently scrub decorations, and rinse filter media in dechlorinated water to remove dirt and debris without harming beneficial bacteria.",
 	},
 ];
 
 const fishLocations = ["Center Hill Lake", "Dale Hollow Lake", "Percy Priest Lake", "Chickamauga Lake", "Reelfoot Lake", "Norris Lake"];
 
-export const LocationsList = () => {
-	return fishLocations.map((lakes) => ({ ...lakes }));
+export const favLocations = () => {
+	return fishLocations.slice();
 };
 
 export const fishesList = () => {
 	return fishList.map((fish) => ({ ...fish }));
 };
 
-export const QuoteList = () => {
+export const quotesArray = () => {
 	return quoteList.quotes.map((quotes) => ({ ...quotes }));
 };
 
-export const DivingTipsList = () => {
-	return quoteList.scubaDivingTips.map((scubaTips) => ({ ...scubaTips }));
+export const divingTipsArray = () => {
+	return scubaDivingTips.map((scubaTips) => ({ ...scubaTips }));
 };
 
-export const HarvestingTipsList = () => {
-	return quoteList.fishHarvestingTips.map((harvestTips) => ({ ...harvestTips }));
+export const harvestingTipsArray = () => {
+	return fishHarvestingTips.map((harvestTips) => ({ ...harvestTips }));
+};
+
+export const tankCleaningArray = () => {
+	return tankCleaningTips.map((tank) => ({ ...tank }));
 };

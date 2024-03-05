@@ -144,9 +144,8 @@ aside {
 /* Style for lake list */
 .lake-list {
     list-style-type: none;
-    padding: 0;
-    display: flex;
-    text-align: center;
+    padding: 0;    
+    
 }
 
 .fish-image {

@@ -1,7 +1,7 @@
 import { fishesList } from "../database.js";
 
-export const FishList = () => {
-	const fishes = fishesList();
+export const FishList = (fishes) => {
+	// const fishes = fishesList();
 
 	let htmlString = '<article class="fishList">';
 
@@ -16,10 +16,9 @@ export const FishList = () => {
                     <li>${fish.name}</li>
                     <li>${fish.length}</li>
                     <li>${fish.diet}</li>
-                    <li>${fish.harvestLocation}</li>
+                    <li>${fish.harvestingLocation}</li>
                 </ul>
             </div>
-            
         </div>
     </div>
     <hr />
@@ -28,4 +27,49 @@ export const FishList = () => {
 	htmlString += "</article>";
 
 	return htmlString;
+};
+
+export const mostHolyFish = () => {
+	const holyFish = [];
+	const addedIds = new Set();
+	const fishes = fishesList();
+
+	for (const fish of fishes) {
+		if (fish.length % 3 === 0 && !addedIds.has(fish.id)) {
+			holyFish.push(fish);
+			addedIds.add(fish.id);
+		}
+	}
+
+	return holyFish;
+};
+
+export const soldierFish = () => {
+	const soldierFish = [];
+	const addedIds = new Set();
+	const fishes = fishesList();
+
+	for (const fish of fishes) {
+		if (fish.length % 5 === 0 && !addedIds.has(fish.id)) {
+			soldierFish.push(fish);
+			addedIds.add(fish.id);
+		}
+	}
+
+	return soldierFish;
+};
+
+export const nonHolyFish = () => {
+	const nonHolyFish = [];
+	const addedIds = new Set();
+	const fishes = fishesList();
+
+	for (const fish of fishes) {
+		if (fish.length % 5 === 0 && !addedIds.has(fish.id)) {
+			nonHolyFish.push(fish);
+			addedIds.add(fish.id);
+		}
+	}
+
+	return nonHolyFish;
 };
