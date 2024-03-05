@@ -144,7 +144,11 @@ aside {
 /* Style for lake list */
 .lake-list {
     list-style-type: none;
+    flex-wrap: wrap;
+    display: flex;
     padding: 0;    
+    
+    justify-content: space-between;
     
 }
 
@@ -154,6 +158,8 @@ aside {
 
 .lake-names {
     margin-bottom: 10px;
+    width: calc(50% - 5px);
+    text-align: center;
 }
 
 /* Styles for the title and hero image container */
